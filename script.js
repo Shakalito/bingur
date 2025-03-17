@@ -24,6 +24,7 @@ const bingoData = [
   "Ping ai-data.pl",
   "Dzień dobry Piotrusiu",
   "Poprosze kubełek z wczoraj",
+  "Pepogladzik jest pepogladzikowy 2"
 ];
 
 function shuffleArray(array, seed) {
