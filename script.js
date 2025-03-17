@@ -26,7 +26,7 @@ const bingoData = [
   "Poprosze kubełek z wczoraj",
   "Pepogladzik jest pepogladzikowy 2",
   "Ty świąteczne miasteczko będzie",
-  "Sie nie bój
+  "Sie nie bój"
 ];
 
 function shuffleArray(array, seed) {
