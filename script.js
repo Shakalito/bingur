@@ -26,7 +26,7 @@ const bingoData = [
   "Poprosze kubełek z wczoraj",
   "Pepogladzik jest pepogladzikowy 2",
   "Ty świąteczne miasteczko będzie",
-  "Sie nie bój"
+  "Sie nie bój",
 ];
 
 function shuffleArray(array, seed) {
@@ -42,7 +42,9 @@ function hash(str, seed) {
 }
 
 function getTodaySeed() {
-  const date = new Date();
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramValue = urlParams.get("data");
+  const date = new Date(paramValue);
   return date.getFullYear() * 10000 + date.getMonth() * 100 + date.getDate();
 }
 
