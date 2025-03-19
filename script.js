@@ -28,6 +28,8 @@ const bingoData = [
   "Ty świąteczne miasteczko będzie",
   "Sie nie bój",
   "Do dupy",
+  "Puenta, puenta",
+  "Krzysztof Majka i jego small fujarka",
 ];
 
 function shuffleArray(array, seed) {
