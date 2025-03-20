@@ -27,6 +27,7 @@ const bingoData = [
   "Pepogladzik jest pepogladzikowy 2",
   "Ty świąteczne miasteczko będzie",
   "Sie nie bój",
+  "Kawusia jest a ciasteczko przyszło",
 ];
 
 function shuffleArray(array, seed) {
@@ -100,6 +101,35 @@ function checkBingo() {
   }
 }
 
+function saveMarkedCells() {
+  const markedCells = [];
+  document.querySelectorAll(".col").forEach((cell, index) => {
+    if (cell.classList.contains("marked")) {
+      markedCells.push(index);
+    }
+  });
+  document.cookie = `marked=${JSON.stringify(
+    markedCells
+  )}; path=/; max-age=28800`;
+}
+
+function loadMarkedCells() {
+  const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
+    const [key, value] = cookie.split("=");
+    acc[key] = value;
+    return acc;
+  }, {});
+
+  if (cookies.marked) {
+    const markedCells = JSON.parse(cookies.marked);
+    document.querySelectorAll(".col").forEach((cell, index) => {
+      if (markedCells.includes(index)) {
+        cell.classList.add("marked");
+      }
+    });
+  }
+}
+
 function populateBingo() {
   const cells = document.querySelectorAll(".col");
   const shuffledData = [...bingoData];
@@ -111,9 +141,11 @@ function populateBingo() {
     }
     cell.addEventListener("click", () => {
       cell.classList.toggle("marked");
+      saveMarkedCells();
       checkBingo();
     });
   });
+  loadMarkedCells();
 }
 
 document.addEventListener("DOMContentLoaded", populateBingo);
