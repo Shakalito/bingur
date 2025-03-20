@@ -28,6 +28,10 @@ const bingoData = [
   "Ty świąteczne miasteczko będzie",
   "Sie nie bój",
   "Kawusia jest a ciasteczko przyszło",
+  "Do dupy",
+  "Puenta, puenta",
+  "Krzysztof Majka i jego small fujarka",
+  "Pana Balickiego boli głowa",
 ];
 
 function shuffleArray(array, seed) {
