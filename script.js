@@ -32,6 +32,7 @@ const bingoData = [
   "Puenta, puenta",
   "Krzysztof Majka i jego small fujarka",
   "Pana Balickiego boli głowa",
+  "Boxdel zarzuca ciekawostką"
 ];
 
 function shuffleArray(array, seed) {
